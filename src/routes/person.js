@@ -1,8 +1,10 @@
 import { Router } from 'express';
 import PersonController from '../person/PersonController';
 import PersonService from '../person/PersonService';
+import EmailService from '../person/EmailService';
 
-const personService = new PersonService();
+const emailService = new EmailService();
+const personService = new PersonService(emailService);
 const controller = new PersonController(personService);
 const router = Router();
 
