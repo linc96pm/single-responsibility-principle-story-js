@@ -1,0 +1,14 @@
+### Create contact
+POST http://localhost:3000/person/contact HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthday": "2000-01-01",
+    "contacts" : [{ "type":"EMAIL", "contact":"jdoe@email.dog"}]
+}
+
+### Get contact
+GET http://localhost:3000/person/contact?email=jdoe@email.dog HTTP/1.1
+Content-Type: application/json
